@@ -22,9 +22,11 @@ php71-exif
 php71-curl
 php71-bz2
 php71-bcmath
+php71-calendar
 php71-zip
 php71-ftp
 php71-opcache
+php71-geoip
 php71-imap
 php71-apcu
 php71-pcntl
