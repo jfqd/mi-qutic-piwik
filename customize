@@ -43,7 +43,10 @@ mv piwik piwik-$PIWIK_VERSION
 cd $DESTDIR
 ln -nfs $DESTDIR/releases/piwik-$PIWIK_VERSION current
 
-chown -R root:root "${DESTDIR}"
+touch $DESTDIR/releases/piwik-$PIWIK_VERSION/config/config.ini.php
+chmod 0640 $DESTDIR/releases/piwik-$PIWIK_VERSION/config/config.ini.php
+
+chown -R root:www "${DESTDIR}"
 chown -R www:www "${DESTDIR}/current/tmp"
 chmod 0777 "${DESTDIR}/current/tmp"
 chmod 0777 "${DESTDIR}/current/tmp/cache/tracker"
