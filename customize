@@ -64,6 +64,10 @@ User-agent: *
 Disallow: /
 EOF
 
+cd "${DESTDIR}/current/misc"
+curl -L -O http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz
+gunzip GeoLiteCity.dat.gz
+
 echo "* Change www for cronjobs"
 usermod -d "$DESTDIR" -s /usr/bin/bash www
 
