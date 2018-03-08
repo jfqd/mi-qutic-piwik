@@ -12,6 +12,7 @@ MUNIN_PLUGINS="
 	apache_accesses
 	apache_processes
 	apache_volume
+	httpd_memory
 "
 
 echo "* Remove unused httpd config files"
