@@ -1,5 +1,17 @@
 # Changelog
 
+## 18.2.0
+
+* switch to latest matomo
+* use GeoIP2
+* use pkgsrc 2018Q2
+* extend apache logging
+
+## 17.4.2
+
+* add httpd_memory munin plugin
+* set TMPDIR to /var/tmp
+
 ## 17.4.1
 
 * download GeoLiteCity.dat into image

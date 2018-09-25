@@ -36,3 +36,10 @@ percona-client-5.6.36
 # web
 ap24-php70
 ap24-usdt
+# build stuff
+gcc49
+gmake
+pkg-config
+autoconf
+# matomo dependency
+heirloom-whoami
