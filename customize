@@ -82,6 +82,7 @@ echo "* Activate munin plugins"
 /opt/qutic/bin/munin-node-plugins ${MUNIN_PLUGINS}
 
 echo "* Build maxminddb"
+mkdir -p /opt/local/src
 cd /opt/local/src
 curl -L -O https://github.com/maxmind/MaxMind-DB-Reader-php/archive/v1.3.0.tar.gz
 gtar xf v1.3.0.tar.gz
