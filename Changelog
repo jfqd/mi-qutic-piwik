@@ -1,5 +1,10 @@
 # Changelog
 
+## 18.3.0
+
+* switch to latest matomo
+* use pkgsrc 2018Q3
+
 ## 18.2.0
 
 * switch to latest matomo
