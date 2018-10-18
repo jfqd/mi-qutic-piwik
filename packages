@@ -1,45 +1,45 @@
 # List packages to add to your image one per line.
 #
 # php
-php70-pdo
-php70-pdo_mysql
-php70-pdo_sqlite
-php70-zlib
-php70-posix
-php70-pear
-php70-pear-Net_SMTP
-php70-pear-Mail_Mime
-php70-pear-HTTP_Request
-php70-pear-HTTP
-php70-mysqli
-php70-mcrypt
-php70-mbstring
-php70-json
-php70-intl
-php70-iconv
-php70-gd
-php70-exif
-php70-curl
-php70-bz2
-php70-bcmath
-php70-calendar
-php70-zip
-php70-ftp
-php70-opcache
-php70-geoip
-php70-imap
-php70-apcu
-php70-pcntl
-php70-xsl
+php72-pdo
+php72-pdo_mysql
+php72-pdo_sqlite
+php72-zlib
+php72-posix
+php72-pear
+php72-pear-Net_SMTP
+php72-pear-Mail_Mime
+php72-pear-HTTP_Request
+php72-pear-HTTP
+php72-mysqli
+php72-pecl-mcrypt
+php72-mbstring
+php72-json
+php72-intl
+php72-iconv
+php72-gd
+php72-exif
+php72-curl
+php72-bz2
+php72-bcmath
+php72-calendar
+php72-zip
+php72-ftp
+php72-opcache
+php72-geoip
+php72-imap
+php72-apcu
+php72-pcntl
+php72-xsl
 # sql
 percona-client
 # web
-ap24-php70
+ap24-php72
 ap24-usdt
 # build stuff
 gcc7
 gmake
-pkg-config
+# pkg-config
 autoconf
 # matomo dependency
 heirloom-whoami
