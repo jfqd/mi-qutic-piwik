@@ -81,32 +81,23 @@ usermod -d "$DESTDIR" -s /usr/bin/bash www
 echo "* Activate munin plugins"
 /opt/qutic/bin/munin-node-plugins ${MUNIN_PLUGINS}
 
-echo "* Build libmaxminddb"
-mkdir -p /opt/local/src
+echo "* Build maxminddb"
 cd /opt/local/src
-curl -L -O https://github.com/maxmind/libmaxminddb/releases/download/1.3.2/libmaxminddb-1.3.2.tar.gz
-tar xf libmaxminddb-1.3.2.tar.gz 
-cd libmaxminddb-1.3.2
+curl -L -O https://github.com/maxmind/MaxMind-DB-Reader-php/archive/v1.3.0.tar.gz
+gtar xf v1.3.0.tar.gz
+cd MaxMind-DB-Reader-php-1.3.0/ext
+/usr/bin/crle -u -l /opt/local/lib
+phpize
 ./configure --prefix=/opt/local
 gmake
 gmake install
-
-# echo "* Build maxminddb"
-# cd /opt/local/src
-# curl -L -O https://github.com/maxmind/MaxMind-DB-Reader-php/archive/v1.3.0.tar.gz
-# gtar xf v1.3.0.tar.gz
-# cd MaxMind-DB-Reader-php-1.3.0/ext
-# phpize
-# ./configure --prefix=/opt/local
-# gmake
-# gmake install
 
 #
 ln -nfs /opt/local/heirloom/bin/whoami /opt/local/bin/whoami
 
 # Clean up
 echo "* Cleaning up."
-pkgin -y rm gcc49 gmake pkg-config autoconf || true
+# pkgin -y rm gcc7 gmake pkg-config autoconf re2c || true
 rm /root/customize
 
 # Prepare image for provisioning
