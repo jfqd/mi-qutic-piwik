@@ -91,22 +91,22 @@ cd libmaxminddb-1.3.2
 gmake
 gmake install
 
-echo "* Build maxminddb"
-cd /opt/local/src
-curl -L -O https://github.com/maxmind/MaxMind-DB-Reader-php/archive/v1.3.0.tar.gz
-gtar xf v1.3.0.tar.gz
-cd MaxMind-DB-Reader-php-1.3.0/ext
-phpize
-./configure --prefix=/opt/local
-gmake
-gmake install
+# echo "* Build maxminddb"
+# cd /opt/local/src
+# curl -L -O https://github.com/maxmind/MaxMind-DB-Reader-php/archive/v1.3.0.tar.gz
+# gtar xf v1.3.0.tar.gz
+# cd MaxMind-DB-Reader-php-1.3.0/ext
+# phpize
+# ./configure --prefix=/opt/local
+# gmake
+# gmake install
 
 #
 ln -nfs /opt/local/heirloom/bin/whoami /opt/local/bin/whoami
 
 # Clean up
 echo "* Cleaning up."
-pkgin -y rm gcc49 gmake pkg-config autoconf
+pkgin -y rm gcc49 gmake pkg-config autoconf || true
 rm /root/customize
 
 # Prepare image for provisioning
