@@ -97,7 +97,7 @@ ln -nfs /opt/local/heirloom/bin/whoami /opt/local/bin/whoami
 
 # Clean up
 echo "* Cleaning up."
-# pkgin -y rm gcc7 gmake pkg-config autoconf re2c || true
+pkgin -y rm gcc7 gmake pkg-config autoconf re2c 2>/dev/null || true
 rm /root/customize
 
 # Prepare image for provisioning
