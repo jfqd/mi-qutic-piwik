@@ -39,13 +39,15 @@ cd $DESTDIR/releases
 curl -L -O https://download.qutic.com/src/piwik/matomo-$PIWIK_VERSION.tar.bz2
 tar xf matomo-$PIWIK_VERSION.tar.bz2
 rm matomo-$PIWIK_VERSION.tar.bz2
-mv matomo matomo-$PIWIK_VERSION
+if [[ -d matomo ]]; then
+  mv matomo matomo-$PIWIK_VERSION
+fi
 
 cd $DESTDIR
-ln -nfs $DESTDIR/releases/piwik-$PIWIK_VERSION current
+ln -nfs $DESTDIR/releases/matomo-$PIWIK_VERSION current
 
-touch $DESTDIR/releases/piwik-$PIWIK_VERSION/config/config.ini.php
-chmod 0640 $DESTDIR/releases/piwik-$PIWIK_VERSION/config/config.ini.php
+touch $DESTDIR/releases/matomo-$PIWIK_VERSION/config/config.ini.php
+chmod 0640 $DESTDIR/releases/matomo-$PIWIK_VERSION/config/config.ini.php
 
 chown -R root:www "${DESTDIR}"
 chown -R www:www "${DESTDIR}/current/tmp"
