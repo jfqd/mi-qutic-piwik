@@ -96,6 +96,7 @@ cd /opt/local/src
 curl -L -O https://github.com/maxmind/MaxMind-DB-Reader-php/archive/v1.3.0.tar.gz
 gtar xf v1.3.0.tar.gz
 cd MaxMind-DB-Reader-php-1.3.0/ext
+phpize
 ./configure --prefix=/opt/local
 gmake
 gmake install
