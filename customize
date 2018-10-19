@@ -49,6 +49,12 @@ ln -nfs $DESTDIR/releases/matomo-$MATOMO_VERSION current
 # touch $DESTDIR/releases/matomo-$MATOMO_VERSION/config/config.ini.php
 # chmod 0640 $DESTDIR/releases/matomo-$MATOMO_VERSION/config/config.ini.php
 
+rm "${DESTDIR}/current/robots.txt"
+cat >> "${DESTDIR}/current/robots.txt" << EOF
+User-agent: *
+Disallow: /
+EOF
+
 mkdir -p "${DESTDIR}/current/tmp/cache/tracker"
 chown -R root:www "${DESTDIR}"
 chown -R www:www "${DESTDIR}/current/tmp"
@@ -61,12 +67,7 @@ chown www:www "${DESTDIR}/current/piwik.js"
 touch "${DESTDIR}/piwik-update.log"
 chown www:www  "${DESTDIR}/piwik-update.log"
 
-rm "${DESTDIR}/current/robots.txt"
-cat >> "${DESTDIR}/current/robots.txt" << EOF
-User-agent: *
-Disallow: /
-EOF
-
+echo "* Get GeoLite2-City db"
 cd "${DESTDIR}/current/misc"
 curl -L -O https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz
 gtar xf GeoLite2-City.tar.gz
@@ -94,7 +95,7 @@ phpize
 gmake
 gmake install
 
-#
+echo "* Make whoami accessible"
 ln -nfs /opt/local/heirloom/bin/whoami /opt/local/bin/whoami
 
 # Clean up
