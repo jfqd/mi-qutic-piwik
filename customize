@@ -5,7 +5,7 @@ PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 # Exit if any commands fail
 set -o errexit
 
-MATOMO_VERSION="3.6.1"
+MATOMO_VERSION="3.9.1"
 DESTDIR="/var/www/htdocs/piwik"
 
 MUNIN_PLUGINS="
