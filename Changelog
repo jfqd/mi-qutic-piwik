@@ -4,6 +4,7 @@
 
 * move to pkgsrc trunk
 * update to matomo 3.9.1
+* include proxysql
 
 ## 18.3.0
 
