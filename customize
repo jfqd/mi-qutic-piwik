@@ -49,7 +49,7 @@ ln -nfs $DESTDIR/releases/matomo-$MATOMO_VERSION current
 # touch $DESTDIR/releases/matomo-$MATOMO_VERSION/config/config.ini.php
 # chmod 0640 $DESTDIR/releases/matomo-$MATOMO_VERSION/config/config.ini.php
 
-rm "${DESTDIR}/current/robots.txt"
+rm "${DESTDIR}/current/robots.txt" || true
 cat >> "${DESTDIR}/current/robots.txt" << EOF
 User-agent: *
 Disallow: /
