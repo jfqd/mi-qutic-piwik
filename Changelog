@@ -1,5 +1,10 @@
 # Changelog
 
+## 20181018.0
+
+* move to pkgsrc trunk
+* update to matomo 3.9.1
+
 ## 18.3.0
 
 * update to php 7.2
