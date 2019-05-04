@@ -59,6 +59,8 @@ mkdir -p "${DESTDIR}/current/tmp/cache/tracker"
 chown -R root:www "${DESTDIR}"
 chown -R www:www "${DESTDIR}/current/tmp"
 chmod -R 0777 "${DESTDIR}/current/tmp"
+chmod 0777 "${DESTDIR}/current/tmp/cache/tracker"
+chown www:www "${DESTDIR}/current/"*.js
 
 # let plugins extend piwik.js
 chmod +w "${DESTDIR}/current/piwik.js"
