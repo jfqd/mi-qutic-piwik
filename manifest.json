@@ -1,6 +1,6 @@
 {
   "name":         "qutic-piwik",
-  "version":      "20201019.0",
+  "version":      "20201019.1",
   "description":  "qutic matomo image",
   "organization": "qutic development",
   "brand":        "piwik instance",

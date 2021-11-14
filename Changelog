@@ -1,5 +1,10 @@
 # Changelog
 
+## 20201019.1
+
+* remove proxysql for mysql 5.6
+* fix httpd tls config
+
 ## 20201019.0
 
 * use latest base image

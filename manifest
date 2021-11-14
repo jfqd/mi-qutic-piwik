@@ -1,7 +1,7 @@
 name="qutic-piwik"
 organization="qutic development"
 brand="matomo instance"
-version="20201019.0"
+version="20201019.1"
 description="qutic matomo image"
 homepage="https://github.com/jfqd/mi-qutic-piwik"
 users="root admin"
