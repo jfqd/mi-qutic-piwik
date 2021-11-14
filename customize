@@ -37,7 +37,7 @@ mkdir -p $DESTDIR/releases
 
 cd $DESTDIR/releases
 curl -L -O https://download.qutic.com/src/piwik/matomo-$MATOMO_VERSION.tar.bz2
-tar xf matomo-$MATOMO_VERSION.tar.bz2
+gtar xf matomo-$MATOMO_VERSION.tar.bz2
 rm matomo-$MATOMO_VERSION.tar.bz2
 if [[ -d matomo ]]; then
   mv matomo matomo-$MATOMO_VERSION
