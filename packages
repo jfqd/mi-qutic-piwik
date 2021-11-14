@@ -27,7 +27,7 @@ php80-calendar
 php80-zip
 php80-ftp
 php80-opcache
-php80-geoip
+# php80-geoip
 php80-imap
 php80-apcu
 php80-pcntl
