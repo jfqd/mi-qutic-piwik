@@ -1,5 +1,13 @@
 # Changelog
 
+## 20201019.0
+
+* use latest base image
+* update to matomo 4.5.0
+* use php-80 for now
+* use latest MaxMind-DB-Reader-php
+* setup tls and use https
+
 ## 20181018.0
 
 * move to pkgsrc trunk

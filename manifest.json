@@ -1,11 +1,11 @@
 {
   "name":         "qutic-piwik",
-  "version":      "20181018.0",
+  "version":      "20201019.0",
   "description":  "qutic matomo image",
   "organization": "qutic development",
   "brand":        "piwik instance",
   "homepage":     "https://github.com/jfqd/mi-qutic-piwik",
-  "base":         "a3615328-6e4e-11e9-b7e7-efd3885d6221",
+  "base":         "dc7582fe-e199-11eb-ad98-375a4b13af54",
   "customer_metadata": {
     "admin_authorized_keys":  {"type": "text", "description": "SSH public authorized key(s) for the admin user"},
     "root_authorized_keys":   {"type": "text", "description": "SSH public authorized key(s) for the root user"},
