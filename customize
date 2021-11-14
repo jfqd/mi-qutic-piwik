@@ -74,8 +74,7 @@ cd "${DESTDIR}/current/misc"
 # download it from:
 # https://download.db-ip.com/free/dbip-city-lite-2021-11.mmdb.gz
 curl -LO https://download.qutic.com/src/piwik/dbip-city-lite-2021-11.mmdb.gz
-gunzip xf dbip-city-lite-2021-11.mmdb.gz
-rm dbip-city-lite-2021-11.mmdb.gz
+gunzip dbip-city-lite-2021-11.mmdb.gz
 
 echo "* Change www for cronjobs"
 usermod -d "$DESTDIR" -s /usr/bin/bash www
