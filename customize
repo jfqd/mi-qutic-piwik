@@ -86,9 +86,9 @@ echo "* Build php maxminddb extension"
 mkdir -p /opt/local/src
 cd /opt/local/src
 # curl -LO https://github.com/maxmind/MaxMind-DB-Reader-php/archive/v1.3.0.tar.gz
-curl -LO https://github.com/maxmind/MaxMind-DB-Reader-php/archive/refs/tags/v1.11.0.tar.gz
-gtar xf v1.11.0.tar.gz
-cd MaxMind-DB-Reader-php-1.11.0/ext
+curl -LO https://github.com/maxmind/MaxMind-DB-Reader-php/archive/refs/tags/v1.11.1.tar.gz
+gtar xf v1.11.1.tar.gz
+cd MaxMind-DB-Reader-php-1.11.1/ext
 export LD_LIBRAY_PATH=/opt/local/lib
 export LDFLAGS="-L/opt/local/lib -R/opt/local/lib"
 /usr/bin/crle -u -l /opt/local/lib
@@ -102,7 +102,7 @@ ln -nfs /opt/local/heirloom/bin/whoami /opt/local/bin/whoami
 
 # Clean up
 echo "* Cleaning up."
-pkgin -y rm gcc7 gmake pkg-config autoconf re2c 2>/dev/null || true
+pkgin -y rm gcc13 gmake pkg-config autoconf re2c 2>/dev/null || true
 rm /root/customize
 
 # Prepare image for provisioning
