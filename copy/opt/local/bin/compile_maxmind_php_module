@@ -1,0 +1,18 @@
+#!/usr/bin/bash
+
+VERSION="1.11.1"
+
+pkgin -y in gcc13 gmake autoconf re2c 2>/dev/null || true
+cd /opt/local/src
+rm -rf MaxMind-DB-Reader-php-* 2>/dev/null
+curl -LO https://github.com/maxmind/MaxMind-DB-Reader-php/archive/refs/tags/v${VERSION}.tar.gz
+gtar xf v${VERSION}.tar.gz
+cd /opt/local/src/MaxMind-DB-Reader-php-${VERSION}/ext
+export LD_LIBRAY_PATH=/opt/local/lib
+export LDFLAGS="-L/opt/local/lib -R/opt/local/lib"
+/usr/bin/crle -u -l /opt/local/lib
+phpize
+./configure --prefix=/opt/local
+gmake
+gmake install
+pkgin -y rm gcc13 gmake autoconf re2c 2>/dev/null || true

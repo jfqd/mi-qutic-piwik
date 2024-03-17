@@ -5,7 +5,7 @@ PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 # Exit if any commands fail
 set -o errexit
 
-MATOMO_VERSION="4.5.0"
+MATOMO_VERSION="5.0.3"
 DESTDIR="/var/www/htdocs/piwik"
 
 MUNIN_PLUGINS="
@@ -84,25 +84,13 @@ echo "* Activate munin plugins"
 
 echo "* Build php maxminddb extension"
 mkdir -p /opt/local/src
-cd /opt/local/src
-# curl -LO https://github.com/maxmind/MaxMind-DB-Reader-php/archive/v1.3.0.tar.gz
-curl -LO https://github.com/maxmind/MaxMind-DB-Reader-php/archive/refs/tags/v1.11.1.tar.gz
-gtar xf v1.11.1.tar.gz
-cd MaxMind-DB-Reader-php-1.11.1/ext
-export LD_LIBRAY_PATH=/opt/local/lib
-export LDFLAGS="-L/opt/local/lib -R/opt/local/lib"
-/usr/bin/crle -u -l /opt/local/lib
-phpize
-./configure --prefix=/opt/local
-gmake
-gmake install
+/usr/local/bin/compile_maxmind_php_module
 
 echo "* Make whoami accessible"
 ln -nfs /opt/local/heirloom/bin/whoami /opt/local/bin/whoami
 
 # Clean up
 echo "* Cleaning up."
-pkgin -y rm gcc13 gmake pkg-config autoconf re2c 2>/dev/null || true
 rm /root/customize
 
 # Prepare image for provisioning
